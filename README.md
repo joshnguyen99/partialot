@@ -25,7 +25,7 @@ $$
 
 The goal is to find an approximate solution to **POT** efficiently. In particular, given an error tolerance $\varepsilon \geq 0$, we want to find a feasible solution $\mathbf{X}$ such that $\left< \mathbf{C}, \mathbf{X} \right>_{F} \leq \left< \mathbf{C}, \text{\textbf{POT}}(\mathbf{r}, \mathbf{c}, s) \right>_{F} + \varepsilon$ (cf. Definition 1). -->
 
-This repository contains implementation of two algorithms for finding $\varepsilon$-approximate solutions (cf. Definition 1) presented in our paper:
+Here are two algorithms for finding $\varepsilon$-approximate solutions (cf. Definition 1) presented in our paper:
 - Adaptive Primal-Dual Accelerated Gradient Descent (APDAGD), with time complexity  $\widetilde{\mathcal{O}}(n^{2.5} / \varepsilon)$; and
 - Dual Extrapolation (DE), with time complexity $\widetilde{\mathcal{O}}(n^{2} / \varepsilon)$.
 
