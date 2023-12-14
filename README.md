@@ -7,23 +7,23 @@ Gradient Methods"**. In: *Proceedings of the AAAI Conference on Artificial Intel
 
 ## (Partial) Optimal Transport
 
-Suppose we have two marginal distributions $\boldsymbol{r} \in \mathbb{R}^m$ and $\boldsymbol{c} \in \mathbb{R}^{n}$ and a non-negative cost matrix $\boldsymbol{C} \in \mathbb{R}_{+}^{m \times n}$. If the total masses in the marginals are equal, then we have the optimal transport problem
+Suppose we have two marginal distributions $\mathbf{r} \in \mathbb{R}^m$ and $\mathbf{c} \in \mathbb{R}^{n}$ and a non-negative cost matrix $\mathbf{C} \in \mathbb{R}_{+}^{m \times n}$. If the total masses in the marginals are equal, then we have the optimal transport problem
 $$
 \begin{align*}
-    \text{\textbf{OT}}(\boldsymbol{r}, \boldsymbol{c}) = &\argmin_{\boldsymbol{X} \in \mathbb{R}_{+}^{m \times n}}  \left< \boldsymbol{C}, \boldsymbol{X} \right>_{F} \\
-    &\text{subject to} ~ \boldsymbol{X} \boldsymbol{1}_n = \boldsymbol{r} ~\text{and}~ \boldsymbol{X}^\top \boldsymbol{1}_m = \boldsymbol{c}.
+    \text{\textbf{OT}}(\mathbf{r}, \mathbf{c}) = &\argmin_{\mathbf{X} \in \mathbb{R}_{+}^{m \times n}}  \left< \mathbf{C}, \mathbf{X} \right>_{F} \\
+    &\text{subject to} ~ \mathbf{X} \mathbf{1}_n = \mathbf{r} ~\text{and}~ \mathbf{X}^\top \mathbf{1}_m = \mathbf{c}.
 \end{align*}
 $$
 
-If the total masses are not equal, we can only transport at most $s = \min\{ \| \boldsymbol{r} \|_1, \| \boldsymbol{c} \|_1\}$ amount of mass in total. This leads us to the following partial optimal transport problem
+If the total masses are not equal, we can only transport at most $s = \min\{ \| \mathbf{r} \|_1, \| \mathbf{c} \|_1\}$ amount of mass in total. This leads us to the following partial optimal transport problem
 $$
 \begin{align*}
-    \text{\textbf{POT}}(\boldsymbol{r}, \boldsymbol{c}, s) = &\argmin_{\boldsymbol{X} \in \mathbb{R}_{+}^{m \times n}}  \left< \boldsymbol{C}, \boldsymbol{X} \right>_{F} \\
-    &\text{subject to} ~ \boldsymbol{X} \boldsymbol{1}_n \leq \boldsymbol{r}, ~ \boldsymbol{X}^\top \boldsymbol{1}_m \leq \boldsymbol{c} ~\text{and}~ \boldsymbol{1}_m^\top \boldsymbol{X} \boldsymbol{1}_n = s.
+    \text{\textbf{POT}}(\mathbf{r}, \mathbf{c}, s) = &\argmin_{\mathbf{X} \in \mathbb{R}_{+}^{m \times n}}  \left< \mathbf{C}, \mathbf{X} \right>_{F} \\
+    &\text{subject to} ~ \mathbf{X} \mathbf{1}_n \leq \mathbf{r}, ~ \mathbf{X}^\top \mathbf{1}_m \leq \mathbf{c} ~\text{and}~ \mathbf{1}_m^\top \mathbf{X} \mathbf{1}_n = s.
 \end{align*}
 $$
 
-The goal is to find an approximate solution to **POT** efficiently. In particular, given an error tolerance $\varepsilon \geq 0$, we want to find a feasible solution $\boldsymbol{X}$ such that $\left< \boldsymbol{C}, \boldsymbol{X} \right>_{F} \leq \left< \boldsymbol{C}, \text{\textbf{POT}}(\boldsymbol{r}, \boldsymbol{c}, s) \right>_{F} + \varepsilon$ (cf. Definition 1).
+The goal is to find an approximate solution to **POT** efficiently. In particular, given an error tolerance $\varepsilon \geq 0$, we want to find a feasible solution $\mathbf{X}$ such that $\left< \mathbf{C}, \mathbf{X} \right>_{F} \leq \left< \mathbf{C}, \text{\textbf{POT}}(\mathbf{r}, \mathbf{c}, s) \right>_{F} + \varepsilon$ (cf. Definition 1).
 
 This repository contains implementation of two algorithms for finding $\varepsilon$-approximate solutions presented in our paper:
 - Adaptive Primal-Dual Accelerated Gradient Descent (APDAGD), with time complexity  $\widetilde{\mathcal{O}}(n^{2.5} / \varepsilon)$; and
