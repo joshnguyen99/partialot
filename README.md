@@ -2,8 +2,8 @@
 
 This repository contains implementation of algorithms for solving the (partial) optimal transport plan between two discrete distributions. Check out our [AAAI 2024](https://aaai.org/aaai-conference/) paper below.
 
-Anh Duc Nguyen, Tuan Dung Nguyen, Minh Quang Nguyen, Hoang H. Nguyen, Lam M. Nguyen, and Kim-Chuan Toh. **"On Partial Optimal Transport: Revising the Infeasibility of Sinkhorn and Efficient
-Gradient Methods"**. In: *Proceedings of the AAAI Conference on Artificial Intelligence (to appear)* 38 (2024)
+Anh Duc Nguyen, Tuan Dung Nguyen, Minh Quang Nguyen, Hoang H. Nguyen, Lam M. Nguyen, and Kim-Chuan Toh. **"[On Partial Optimal Transport: Revising the Infeasibility of Sinkhorn and Efficient
+Gradient Methods](https://arxiv.org/abs/2312.13970)"**. In: *Proceedings of the AAAI Conference on Artificial Intelligence (to appear)* 38 (2024)
 
 ## (Partial) Optimal Transport
 
